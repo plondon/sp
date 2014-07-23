@@ -1,0 +1,112 @@
+body {
+  background-color: #218286; }
+  body header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: white; }
+    body header img {
+      height: 40px;
+      padding-top: 10px;
+      padding-left: 20px; }
+    body header a {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      display: block;
+      width: 45px;
+      height: 35px;
+      cursor: pointer; }
+      body header a.active span {
+        background-color: transparent;
+        -webkit-transition: background-color 100ms;
+        -moz-transition: background-color 100ms;
+        transition: background-color 100ms; }
+        body header a.active span:before {
+          top: 0px;
+          -webkit-transform: rotate(45deg) translateY(0);
+          -moz-transform: rotate(45deg) translateY(0);
+          -ms-transform: rotate(45deg) translateY(0);
+          -o-transform: rotate(45deg) translateY(0);
+          transform: rotate(45deg) translateY(0);
+          -webkit-transition: all 300ms;
+          -moz-transition: all 300ms;
+          transition: all 300ms; }
+        body header a.active span:after {
+          top: 0px;
+          -webkit-transform: rotate(-45deg) translateY(0);
+          -moz-transform: rotate(-45deg) translateY(0);
+          -ms-transform: rotate(-45deg) translateY(0);
+          -o-transform: rotate(-45deg) translateY(0);
+          transform: rotate(-45deg) translateY(0);
+          -webkit-transition: all 300ms;
+          -moz-transition: all 300ms;
+          transition: all 300ms; }
+      body header a span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-top: -2px;
+        background-color: black;
+        -webkit-transition: background-color 300ms;
+        -moz-transition: background-color 300ms;
+        transition: background-color 300ms; }
+        body header a span:before {
+          content: '';
+          width: 45px;
+          height: 4px;
+          background-color: black;
+          position: absolute;
+          top: -10px;
+          -webkit-transition: all 300ms;
+          -moz-transition: all 300ms;
+          transition: all 300ms; }
+        body header a span:after {
+          content: '';
+          width: 45px;
+          height: 4px;
+          background-color: black;
+          position: absolute;
+          top: 10px;
+          -webkit-transition: all 300ms;
+          -moz-transition: all 300ms;
+          transition: all 300ms; }
+  body #menu {
+    position: absolute;
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 60px;
+    right: -300px;
+    -webkit-transition: right 300ms;
+    -moz-transition: right 300ms;
+    transition: right 300ms; }
+    body #menu.active {
+      right: 0px;
+      -webkit-transition: right 300ms;
+      -moz-transition: right 300ms;
+      transition: right 300ms; }
+  body #overlay {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    height: 100%;
+    left: -100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: -webkit-calc(100% - 300px);
+    width: calc(100% - 300px);
+    -webkit-transition: left 300ms;
+    -moz-transition: left 300ms;
+    transition: left 300ms; }
+    body #overlay.active {
+      left: 0px;
+      -webkit-transition: left 300ms;
+      -moz-transition: left 300ms;
+      transition: left 300ms; }
