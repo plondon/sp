@@ -79,6 +79,10 @@ body {
   body #menu {
     position: absolute;
     background-color: white;
+    font-family: 'codepro';
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-align: left;
     width: 300px;
     height: 100%;
     margin: 0;
@@ -93,6 +97,20 @@ body {
       -webkit-transition: right 300ms;
       -moz-transition: right 300ms;
       transition: right 300ms; }
+    body #menu ul:first-child li {
+      list-style: none;
+      margin-top: 60px; }
+      body #menu ul:first-child li a {
+        color: black;
+        text-decoration: none;
+        -webkit-transition: color 300ms;
+        -moz-transition: color 300ms;
+        transition: color 300ms; }
+      body #menu ul:first-child li a:hover {
+        color: #f19b3f;
+        -webkit-transition: color 100ms;
+        -moz-transition: color 100ms;
+        transition: color 100ms; }
   body #overlay {
     position: absolute;
     top: 60px;
