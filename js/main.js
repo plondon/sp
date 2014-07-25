@@ -20,11 +20,19 @@ $(document).on('ready', function() {
   var button  = $('#hamburger');
   var menu    = $('#menu');
   var overlay = $('#overlay');
+  var names   = $('#nav li');
+  var pages   = $('.content');
 
-  var ham = new Hamburger(button, menu, overlay)
+  var ham = new Hamburger(button, menu, overlay);
 
   button.on('click', function() {
     ham.toggle();
+  })
+
+  names.on('click', function(e) {
+    var name = $(e.currentTarget)
+    pages.removeClass('active');
+    $(pages[name.index()]).addClass('active');
   })
 
 });

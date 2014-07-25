@@ -11,6 +11,7 @@ body {
     height: 60px;
     width: 100%;
     background-color: white;
+    box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
     img {
       height: 40px;
       padding-top: 10px;
@@ -18,7 +19,7 @@ body {
     }
     a {
       position: absolute;
-      top: 15px;
+      top: 12px;
       right: 30px;
       display: block;
       width: 45px;
@@ -71,6 +72,41 @@ body {
       }
     }
   }
+  #nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    padding: 0;
+    li {
+      font-family: 'codepro';
+      list-style: none;
+      text-transform: uppercase;
+      line-height: 60px;
+      height: 60px;
+      width: 200px;
+      margin-top: 10px;
+      padding-left: 25px;
+      font-size: 1.4em;
+      cursor: pointer;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      @include transition(all 300ms);
+      &:first-child {
+        background-color: #e0e4e5;
+      }
+      &:nth-child(2) {
+        background-color: #bbbebf;
+      }
+      &:last-child {
+        background-color: #959798;
+      }
+      &:hover {
+        background: black;
+        color: white;
+        width: 220px;
+        @include transition(all 100ms);
+      }
+    }
+  }
   #menu {
     position: absolute;
     background-color: white;
@@ -84,6 +120,7 @@ body {
     padding: 0;
     top: 60px;
     right: -300px;
+    z-index: 100;
     @include transition(right 300ms);
     &.active {
       right: 0px;
@@ -112,11 +149,34 @@ body {
     height: 100%;
     left: -100%;
     background-color: rgba(0,0,0,0.6);
+    z-index: 100;
     @include calc(width, '100% - 300px');
     @include transition(left 300ms);
     &.active {
       left: 0px;
       @include transition(left 300ms);
+    }
+  }
+  .content {
+    position: absolute;
+    font-family: 'codepro';
+    text-transform: uppercase;
+    top: 100px;
+    left: -140%;
+    background-color: #a58e51;
+    padding-left: 1000px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    z-index: -1;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    @include transition(left 1000ms, background-color 500ms);
+    iframe {
+      padding-top: 40px;
+    }
+    &.active {
+      left: -640px;
+      background-color: #f3f0e7;
+      @include transition(left 1000ms, background-color 500ms);
     }
   }
 }
