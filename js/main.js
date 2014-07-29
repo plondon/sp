@@ -16,6 +16,16 @@ Hamburger.prototype.toggle = function() {
   }
 }
 
+var toggleAccordian = function() {
+  $accordian = $('.accordian')
+
+  $accordian.addClass('active');
+
+  setTimeout(function() {
+    $accordian.removeClass('active');
+  }, 1200);
+}
+
 $(document).on('ready', function() {
   var button  = $('#hamburger');
   var menu    = $('#menu');
@@ -25,27 +35,20 @@ $(document).on('ready', function() {
 
   var ham = new Hamburger(button, menu, overlay);
 
+  // events
   button.on('click', function() {
     ham.toggle();
   })
 
   names.on('click', function(e) {
     var name = $(e.currentTarget);
-    pages.removeClass('peek');
+    toggleAccordian();
+
     pages.removeClass('active');
-    $(pages[name.index()]).addClass('active');
-  });
+    setTimeout(function() {
+      $(pages[name.index()]).addClass('active');
+    }, 1200);
 
-  names.on('mouseover', function(e) {
-    var card = $(e.currentTarget);
-    if (!$(pages[card.index()]).hasClass('active')) {
-      pages.removeClass('peek');
-      $(pages[card.index()]).addClass('peek');
-    }
   });
-
-  names.on('mouseleave', function() {
-    pages.removeClass('peek');
-  })
 
 });

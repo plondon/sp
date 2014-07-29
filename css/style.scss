@@ -1,9 +1,8 @@
 @import 'bourbon/bourbon';
 
-$green: #218286;
-
 body {
-  background-color: $green;
+  max-width: 1600px;
+  overflow: hidden;
   header {
     position: absolute;
     top: 0;
@@ -161,10 +160,12 @@ body {
     position: absolute;
     font-family: 'codepro';
     text-transform: uppercase;
-    top: 60px;
+    left: 50%;
+    margin-left: -385px;
+    top: -700px;
+    width: 700px;
     height: 600px;
-    padding-left: 345px;
-    left: -1095px;
+    padding: 20px;
     background-color: #a58e51;
     padding-right: 50px;
     padding-bottom: 40px;
@@ -184,19 +185,78 @@ body {
       right: 0px;
       width: 700px;
     }
-    @include transition(left 1000ms, background-color 500ms);
+    @include transition(top 1000ms, background-color 500ms);
     iframe {
+      position: relative;
       padding-top: 40px;
+      margin: 0 auto;
     }
     &.active {
-      left: 0px;
+      top: 60px;
+      height: 100%;
       background-color: #f3f0e7;
-      @include transition(left 1000ms, background-color 500ms);
+      @include transition(top 1000ms, background-color 500ms);
     }
-    &.peek {
-      z-index: -1;
-      left: -975px;
-      @include transition(left 500ms);
+  }
+}
+
+#background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  .accordian {
+    position: absolute;
+    height: 100%;
+    top: 60px;
+    left: 50%;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    @include transition(width 450ms);
+    &:first-child {
+      width: 1000px;
+      margin-left: -500px;
+      background-color: #218286;;
+      z-index: -10;
+      &.active {
+        width: 0;
+        @include transition(width 450ms);
+      }
+    } 
+    &:nth-child(2) {
+      width: 1200px;
+      margin-left: -600px;
+      background-color: #155457;
+      z-index: -20;
+      &.active {
+        width: 0;
+        @include transition(width 450ms);
+        @include transition-delay(400ms);
+      }
+    }
+    &:nth-child(3) {
+      width: 1400px;
+      margin-left: -700px;
+      background-color: #0e3637;
+      z-index: -30;
+      &.active {
+        width: 0;
+        @include transition(width 450ms);
+        @include transition-delay(800ms);
+      }
+    }
+    &:nth-child(4) {
+      width: 1600px;
+      margin-left: -800px;
+      background-color: #0a2628;
+      z-index: -40;
+      &.active {
+        width: 0;
+        @include transition(width 450ms);
+        @include transition-delay(1200ms);
+      }
     }
   }
 }
