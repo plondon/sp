@@ -30,9 +30,22 @@ $(document).on('ready', function() {
   })
 
   names.on('click', function(e) {
-    var name = $(e.currentTarget)
+    var name = $(e.currentTarget);
+    pages.removeClass('peek');
     pages.removeClass('active');
     $(pages[name.index()]).addClass('active');
+  });
+
+  names.on('mouseover', function(e) {
+    var card = $(e.currentTarget);
+    if (!$(pages[card.index()]).hasClass('active')) {
+      pages.removeClass('peek');
+      $(pages[card.index()]).addClass('peek');
+    }
+  });
+
+  names.on('mouseleave', function() {
+    pages.removeClass('peek');
   })
 
 });
