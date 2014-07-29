@@ -41,13 +41,17 @@ $(document).on('ready', function() {
   })
 
   names.on('click', function(e) {
-    var name = $(e.currentTarget);
-    toggleAccordian();
+    var $name = $(e.currentTarget);
 
-    pages.removeClass('active');
-    setTimeout(function() {
-      $(pages[name.index()]).addClass('active');
-    }, 1200);
+    if (!$(pages[$name.index()]).hasClass('active')) {
+      toggleAccordian();
+
+      pages.removeClass('active');
+      setTimeout(function() {
+        $(pages[$name.index()]).addClass('active');
+      }, 1200);      
+    }
+
 
   });
 
