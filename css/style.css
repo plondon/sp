@@ -89,7 +89,7 @@ body {
       text-transform: uppercase;
       line-height: 60px;
       height: 60px;
-      width: 200px;
+      width: 100px;
       margin-top: 10px;
       padding-left: 25px;
       font-size: 1.4em;
@@ -105,9 +105,9 @@ body {
       body #nav li:last-child {
         background-color: #959798; }
       body #nav li:hover {
-        background: black;
+        background: #f19b3f;
         color: white;
-        width: 220px;
+        width: 120px;
         -webkit-transition: all 100ms;
         -moz-transition: all 100ms;
         transition: all 100ms; }
@@ -139,14 +139,60 @@ body {
       body #menu ul:first-child li a {
         color: black;
         text-decoration: none;
+        position: relative;
         -webkit-transition: color 300ms;
         -moz-transition: color 300ms;
         transition: color 300ms; }
+        body #menu ul:first-child li a:after {
+          content: '';
+          width: 0%;
+          background-color: black;
+          height: 1px;
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          -webkit-transition: width 250ms;
+          -moz-transition: width 250ms;
+          transition: width 250ms; }
       body #menu ul:first-child li a:hover {
         color: #f19b3f;
         -webkit-transition: color 100ms;
         -moz-transition: color 100ms;
         transition: color 100ms; }
+        body #menu ul:first-child li a:hover:after {
+          width: 100%;
+          -webkit-transition: width 250ms;
+          -moz-transition: width 250ms;
+          transition: width 250ms; }
+    body #menu .share {
+      text-align: center;
+      padding: 0px;
+      position: relative;
+      top: 300px; }
+      body #menu .share li {
+        margin-left: 10px;
+        display: inline-block;
+        list-style: none;
+        -webkit-transition: color 400ms;
+        -moz-transition: color 400ms;
+        transition: color 400ms; }
+        body #menu .share li a {
+          color: #8d8d8d; }
+        body #menu .share li:first-child:hover a {
+          color: #3B5998;
+          -webkit-transition: color 250ms;
+          -moz-transition: color 250ms;
+          transition: color 250ms; }
+        body #menu .share li:nth-child(2):hover a {
+          color: #b31217;
+          -webkit-transition: color 250ms;
+          -moz-transition: color 250ms;
+          transition: color 250ms; }
+        body #menu .share li:last-child:hover a {
+          color: #00aced;
+          -webkit-transition: color 250ms;
+          -moz-transition: color 250ms;
+          transition: color 250ms; }
   body #overlay {
     position: absolute;
     top: 60px;
