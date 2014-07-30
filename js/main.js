@@ -35,6 +35,9 @@ $(document).on('ready', function() {
 
   var ham = new Hamburger(button, menu, overlay);
 
+  toggle = {}
+  toggle.busy;
+
   // events
   button.on('click', function() {
     ham.toggle();
@@ -42,16 +45,18 @@ $(document).on('ready', function() {
 
   names.on('click', function(e) {
     var $name = $(e.currentTarget);
-
-    if (!$(pages[$name.index()]).hasClass('active')) {
+    
+    if (!$(pages[$name.index()]).hasClass('active') && !toggle.busy) {
+      toggle.busy = true;
       toggleAccordian();
 
       pages.removeClass('active');
+
       setTimeout(function() {
         $(pages[$name.index()]).addClass('active');
+        toggle.busy = false;
       }, 1200);      
     }
-
 
   });
 
