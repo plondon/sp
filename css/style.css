@@ -1,6 +1,9 @@
 body {
   max-width: 1600px;
   overflow: hidden; }
+  @media all and (max-width: 800px) {
+    body {
+      overflow: scroll; } }
   body header {
     position: absolute;
     top: 0;
@@ -237,14 +240,32 @@ body {
       font-size: 14px;
       text-transform: initial;
       line-height: 1.4em;
-      letter-spacing: 2px;
+      letter-spacing: 0.2em;
       position: relative;
       right: 0px;
       width: 700px; }
     body .content iframe {
       position: relative;
       padding-top: 40px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      width: 680px;
+      height: 383px; }
+    @media all and (max-width: 940px) {
+      body .content {
+        position: absolute;
+        left: 10%;
+        width: 80%;
+        margin-left: 0px;
+        padding: 0px; }
+        body .content iframe {
+          width: 90%;
+          left: 5%; }
+        body .content .bio h2 {
+          padding-left: 20px; }
+        body .content .bio p {
+          width: initial;
+          padding-left: 20px;
+          letter-spacing: initial; } }
     body .content.active {
       top: 60px;
       height: 100%;
